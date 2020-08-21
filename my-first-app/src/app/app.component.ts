@@ -6,11 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  showSecret = false;
-  log = [];
+  // servers; (code which causes an error not to push data in the array)
+  servers = [];
 
-  onToggleDetails() {
-    this.showSecret = !this.showSecret;
-    this.log.push(this.log.length + 1);
+  onAddServer() {
+    this.servers.push('Another Server');
+  }
+
+  onRemoveServer(id: number) {
+    // const position = id + 1; (code which causes an error not remove from array)
+    const position = id;
+    this.servers.splice(position, 1);
   }
 }
