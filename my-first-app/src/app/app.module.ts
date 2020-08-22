@@ -4,22 +4,22 @@ import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
-import { GameControlComponent } from './game-control/game-control.component';
-import { OddComponent } from './odd/odd.component';
-import { EvenComponent } from './even/even.component';
+import { AccountComponent } from './account/account.component';
+import { NewAccountComponent } from './new-account/new-account.component';
+import { AccountsService } from './accounts.service';
+import { LoggingService } from './logging.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GameControlComponent,
-    OddComponent,
-    EvenComponent
+    AccountComponent,
+    NewAccountComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [AccountsService, LoggingService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
