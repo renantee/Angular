@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -51,6 +51,6 @@ export class AppComponent {
       name: 'New Server',
       status: 'stable',
       started: new Date(15, 1, 2017)
-    })
+    });
   }
 }
