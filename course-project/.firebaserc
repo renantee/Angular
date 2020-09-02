@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "ng-course-recipe-book-4ce87"
+  },
+  "targets": {
+    "ng-course-recipe-book-4ce87": {
+      "hosting": {
+        "course-project": [
+          "ng-course-recipe-book-4ce87"
+        ]
+      }
+    }
   }
 }
