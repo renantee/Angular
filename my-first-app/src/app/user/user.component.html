@@ -1,2 +1,8 @@
-<p>User with <strong>ID {{ id }}</strong> was loaded</p>
-<button class="btn btn-primary" (click)="onActivate()">Activate</button>
+<div *ngIf="isLoggedIn">
+  <h1>User logged in</h1>
+  <p>User is: {{ user.name }}</p>
+</div>
+<div *ngIf="!isLoggedIn">
+  <h1>User not logged in</h1>
+  <p>Please log in first</p>
+</div>

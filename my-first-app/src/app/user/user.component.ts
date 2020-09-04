@@ -1,26 +1,24 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Params } from '@angular/router';
 
-import { UserService } from '../user.service';
+import { UserService } from "./user.service";
+import { DataService } from "../shared/data.service";
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
-  styleUrls: ['./user.component.css']
+  styleUrls: ['./user.component.css'],
+  providers: [UserService, DataService]
 })
 export class UserComponent implements OnInit {
-  id: number;
+  user: {name: string};
+  isLoggedIn = false;
+  data: string;
 
-  constructor(private route: ActivatedRoute, private userService: UserService) {
-  }
+  constructor(private userService: UserService, private dataService: DataService) { }
 
   ngOnInit() {
-    this.route.params.subscribe((params: Params) => {
-      this.id = +params.id;
-    });
+    this.user = this.userService.user;
+    this.dataService.getDetails().then((data: string) => this.data = data);
   }
 
-  onActivate() {
-    this.userService.activatedEmitter.next(true);
-  }
 }
